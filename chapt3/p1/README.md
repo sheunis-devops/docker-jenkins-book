@@ -53,3 +53,5 @@ You can test this with the following basic pipeline:
     }
 
 Set the number of executors on the master to 0 and watch the job run only on the slave.
+
+**Note:** I can probably do better wrt opening ports only to security groups, etc. Will have to experiment more to see if I can lock this setup down better. This is only for simple demo purposes though.
