@@ -1,0 +1,48 @@
+---
+- hosts: web1
+  tasks:
+    - name: install Redis
+      apt:
+        name: redis-server
+        state: present
+    - name: start Redis
+      service:
+        name: redis-server
+        state: started
+    - name: copy Redis configuration
+      copy:
+        src: redis.conf
+        dest: /etc/redis/redis.conf
+      notify: restart Redis
+  handlers:
+    - name: restart Redis
+      service:
+        name: redis-server
+        state: restarted
+- hosts: web2
+  tasks:
+    - name: ensure Java Runtime Environment is installed
+      apt:
+        name: default-jre
+        state: present
+    - name: create directory for Calculator
+      file:
+        path: /var/calculator
+        state: directory
+    - name: configure Calculator as a service
+      copy:
+        src: calculatorserv
+        dest: /etc/init.d/calculatorserv
+        mode: a+x
+    - name: copy Calculator
+      copy:
+        src: build/libs/calculator-0.0.1-SNAPSHOT.jar
+        dest: /var/calculator/calculator.jar
+      notify:
+        - restart Calculator
+  handlers:
+    - name: restart Calculator
+      service:
+        name: calculatorserv
+        enabled: yes
+        state: restarted
