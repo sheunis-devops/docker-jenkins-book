@@ -1,6 +1,6 @@
 # Continuous Delivery Pipeline
 
-Code for the chapter is here: https://github.com/sheunis/docker-jenkins-chapt5
+Code for the chapter is here: https://github.com/sheunis/docker-jenkins-chapt7
 
 For this chapter, you should run 3 EC2 instances with 4GB+ of RAM each. For the first instance, which will be the Jenkins instance, start it with the following user data:
 
