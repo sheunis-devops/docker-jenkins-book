@@ -1,6 +1,6 @@
 # Configuration Management with Ansible
 
-Keeping the code here, since this chapter doesn't use Jenkins.
+Keeping the code here, since this chapter doesn't use Jenkins. Also running everything locally to simplify things.
 
 The first step involves building the two types of Ansible images as follows:
 
