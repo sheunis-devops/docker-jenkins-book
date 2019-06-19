@@ -1,6 +1,6 @@
 # Continuous Delivery Pipeline
 
-Code for the chapter is here: https://github.com/sheunis/docker-jenkins-chapt7
+Code for the chapter is here: https://github.com/sheunis-devops/docker-jenkins-chapt7
 
 For this chapter, you should run 3 EC2 instances with 4GB+ of RAM each. For the first instance, which will be the Jenkins instance, start it with the following user data:
 
@@ -63,5 +63,7 @@ Lastly, you need to install the **HTML Publisher** plugin and you also need to s
 If you now create a job with the chapt7 repo and run it, everything should pass. You should be able to access Prod or Staging as follows:
 
     http://<public ip>/sum?a=1&b=2
+
+One last thing, it is not ideal to explicitly set the port to **8080** in the docker-compose file, since that will cause problems when using docker-compose to scale. The problem is that I don't know how to figure out which port it will be bound to on the Prod or Staging instances when not doing this.
 
 This is quite cool, since it shows Github+Jenkins+Docker+Docker Compose+Ansible.
