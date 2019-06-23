@@ -17,7 +17,7 @@ Get the initial admin password by SSH'ing into the host and using the following:
 
 `sudo cat /var/lib/jenkins/secrets/initialAdminPassword`
 
-Install the **Self-Organizing Swarm Plug-in Modules** plugin. Set the **JNLP** port to **50000** and the protocol to **JNLP2** (bad), but it makes it easy to get a demo running.
+Install the **Self-Organizing Swarm Plug-in Modules** plugin. Under **Configure Global Security**, set the **TCP port for inbound agents** to **50000** and the protocol to **JNLP2** (bad), but it makes it easy to get a demo running.
 
 ## Slave Setup
 
