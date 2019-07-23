@@ -1,6 +1,6 @@
 # Automated Acceptance Testing
 
-Code for the chapter is here: https://github.com/sheunis-devops/docker-jenkins-chapt5
+Code for the chapter is here: https://github.com/sheunis-scratchpad/docker-jenkins-chapt5
 
 For this chapter, you can just run everything locally to simplify it. First step involves building the Jenkins image containing Docker and Docker Compose as follows:
 
